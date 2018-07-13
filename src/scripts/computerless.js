@@ -9,39 +9,53 @@ var outputs = {
   crayons: Array(3).fill(null)
 }
 
+// =============================================
+
 //Sample working code -- groups solutions go here
+//note to self re: level of complexity if multiple cards of same color and does this apply to crayons too? maybe depends on how they sort
+
+var tools = [];
 
 for (var i = 0; i < cards.length; i++) {
-
-  if (cards[i] == 'blue') {
-    for (var j = 0; j < crayons.length; j++) {
-      if (crayons[j] == 'yellow') {
-        drawSoccerBall(crayons[j], cards[i]);
-        break
-        }
-      }
-    }
-
-  if (cards[i] == 'red') {
-    for (var k = 0; k < crayons.length; k++) {
-      if (crayons[k] == 'blue') {
-        drawStickFigure(crayons[k], cards[i]);
-        break
-      }
-    }
+  if (cards[i] === 'yellow') {
+    tools.push(cards[i])
   }
-
-  if (cards[i] == 'green') {
-    for (var l = 0; l < crayons.length; l++) {
-      if (crayons[l] == 'purple') {
-        drawTrophy(crayons[l], cards[i]);
-        break
-      }
-    }
-  }
-
 }
 
+for (var j = 0; j < crayons.length; j++) {
+  if (crayons[j] === 'blue') {
+    tools.push(crayons[j])
+  }
+}
+
+drawStickFigure(tools[1], tools[0])
+
+for (var k = 0; k < cards.length; k++) {
+  if (cards[k] === 'green') {
+    tools.push(cards[k])
+  }
+}
+
+for (var l = 0; l < crayons.length; l++) {
+  if (crayons[l] === 'purple') {
+    tools.push(crayons[l])
+  }
+}
+
+drawSoccerBall(tools[3], tools[2])
+
+
+for (var m = 0; m < cards.length; m++) {
+  if (cards[m] === 'blue') {
+    for (var n = 0; n < crayons.length; n++) {
+      if (crayons[n] === 'red'){
+        drawTrophy(crayons[n], cards[m])
+        break
+      }
+    }
+    break
+  }
+}
 
 
 // ===========================================

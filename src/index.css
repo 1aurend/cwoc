@@ -1,6 +1,8 @@
 body {
   font: 24px "Century Gothic", Futura, sans-serif;
+  color: white;
   margin: 20px;
+  background: black;
 }
 
 ol, ul {
@@ -91,6 +93,19 @@ ol, ul {
 
 .greenCard {
   background: green;
+  border: 1px solid #999;
+  float: left;
+  line-height: 200px;
+  height: 450px;
+  margin-left: 20px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 275px;
+}
+
+.yellowCard {
+  background: yellow;
   border: 1px solid #999;
   float: left;
   line-height: 200px;
